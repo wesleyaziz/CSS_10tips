@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/10.css">
+    <title>10_Conic-gradient border animation</title>
+</head>
+<body>
+    <!-- 
+        說明:
+            1.  製作漸變邊框:
+                background-image: conic-gradient(from var(--angle),red,blue,red)
+            2.  製作漸變角度:
+                @property --angle
+                    syntax: '<angle>'
+                    initial-value: 0deg
+                    inherits: false
+            3. 利用keyframes動畫修改角度產生漸變動畫，而不是使用transform: rotate的方式
+                @keyframes spin
+                    0%
+                        --angle: 0deg
+                    100%
+                        --angle: 360deg
+    -->
+    <div class="container">
+        <div class="content">
+            <h2>Animate Border</h2>
+            <p>Lorem ipsum dolor sit ametconsectetur adipisicing elit. Veritatis facere nesciunt similique ad nisi consequuntur ipsum omnis, temporibus incidunt reiciendis quae asperiores quisquam ullam possimus autem voluptatum quasi necessitatibus. Blanditiis!</p>
+        </div>
+
+    </div>
+</body>
+</html>

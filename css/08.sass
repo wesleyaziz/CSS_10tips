@@ -1,0 +1,32 @@
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  text-decoration: none
+  list-style: none
+
+html,body
+  +size(100%,100vh)
+  background-color: #333
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  overflow: hidden
+  gap: 1em
+
+img
+  +size(500px, auto)
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)
+input[type="checkbox"]
+  +size(30px)
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)
+  accent-color: #f0e359
+  appearance: none
+  background-color: #cacaca
+  &:checked
+    appearance: auto

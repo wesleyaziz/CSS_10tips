@@ -1,0 +1,29 @@
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  text-decoration: none
+  list-style: none
+
+html,body
+  +size(100%)
+  background-color: #333
+
+.container
+  +size(100%,100vh)
+  padding: 1em
+  .wrap
+    +size(100%,100px)
+    margin-top: 1em
+    padding: 1em
+    border-radius: 1em
+    background-color: #282a32
+    color:#a3abbf
+    // overflow: hidden
+    overflow-y: auto
+  
+

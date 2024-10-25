@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/07.css">
+    <title>07_grid-template-rows</title>
+</head>
+<body>
+    <!-- 
+        說明:
+            1.details標籤可以讓內容隱藏，當點擊summary時，內容會顯示，但卻不能使用transition效果
+            2.使用css grid讓transition來達到平滑的展開和收合效果，再利用javascript來控制展開和收合
+            3.grid-template-rows: 1.5em 0fr 來達到隱藏內容的效果
+            4.grid-template-rows: 1.5em 1fr 來達到展開內容的效果
+    -->
+    <details>
+        <summary>⬇︎ Click to expand</summary>
+        <p>　　Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi incidunt officia amet alias iste debitis deleniti at voluptate ullam? Tempora atque eaque magnam laudantium nulla, voluptatibus sapiente officia quas consequatur.</p>
+    </details>
+    <div class="container open">
+        <div class= 'summary'>Hello World</div>
+        <div class="hidden">
+            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eveniet harum dolor ipsam quaerat! Praesentium, repellendus. Omnis molestias dicta, itaque officia harum eos, facilis nobis labore velit magni molestiae consequuntur?</p>
+        </div>
+
+    </div>
+    <script>
+        const container = document.querySelector('.container')
+        container.addEventListener('click',function(){
+            container.classList.toggle('open')
+        })
+    </script>
+
+</body>
+</html>

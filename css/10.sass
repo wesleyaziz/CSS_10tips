@@ -1,0 +1,53 @@
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+
+@mixin flexbox($direction:row,$justify:center,$align:center)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+  
+@property --angle
+  syntax: '<angle>'
+  initial-value: 0deg
+  inherits: false
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  text-decoration: none
+  list-style: none
+
+html,body
+  +size(100%,100vh)
+  +flexbox(column,center,center)
+  background-color: #333
+
+  overflow: hidden
+  gap: 1em
+
+.container
+  +size(300px,auto)
+  +flexbox(column,center,center)
+  border-radius: 1.2em
+  background-image: conic-gradient(from var(--angle),red,blue,red)
+  animation: spin 2s linear infinite
+  .content  
+    +size(98%,98%)
+    +flexbox(column,center,center)
+    text-align: center
+    background-color: #1c202c
+    color: #fff
+    padding: 1em
+    border-radius: 1em
+    gap: 1em
+    h2
+      font-size: 1.5em
+      font-weight: bolder
+
+@keyframes spin
+  0%
+    --angle: 0deg
+  100%
+    --angle: 360deg

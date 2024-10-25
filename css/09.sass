@@ -1,0 +1,52 @@
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  text-decoration: none
+  list-style: none
+
+html,body
+  +size(100%,100vh)
+  background-color: #333
+  display: flex
+  justify-content: center
+  align-items: center
+  overflow: hidden
+  
+ul  
+  display: flex
+  gap: 1em
+  li
+    +size(300px, auto)
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background-color: #282834
+    padding: 1.5em
+    color: #fff
+    border-radius: 1em
+    box-shadow: 0 0 10px rgba(0,0,0,0.5)
+    position: relative
+    &::before
+      content: attr(data-id)
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translate(-50%,-50%)
+      background-color: #ffdd0035
+      border: 1px solid #ffdd00
+      color: #ffdd00
+      padding: .5em 2em
+      border-radius:50px
+      text-transform: uppercase
+    img
+      +size(250px, 200px)
+      object-fit: cover
+      object-position: top
+      margin-bottom: 1em 
+

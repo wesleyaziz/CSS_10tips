@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/04.css">
+    <title>04_Inset</title>
+</head>
+<body>
+    <!-- 
+        說明:
+            1. inset 是CSS的屬性，用於設置元素的內邊距。
+            2. 在position: absolute; 時，可以設置四個方向的內邊距，也可以使用關鍵字 auto 來自動調整。
+            3. 當使用 inset: 0 時，會完全覆蓋父元素，緊貼父元素的邊框。
+            4. 當子元素有寬高時候，可以使用 inset:0 和 margin:auto 來實現絕對居中。
+            5. 原本可能會需要更複雜的設定(如下)來實現絕對居中，現在只需要兩行代碼就可以實現。
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+    -->
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

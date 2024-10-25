@@ -1,0 +1,38 @@
+@mixin size($w,$h:$w)
+  width: $w
+  height: $h
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  text-decoration: none
+  list-style: none
+
+html,body
+  +size(100%)
+  background-color: #333
+  display: flex
+  justify-content: center
+  align-items: center
+
+.parent
+  +size(300px,300px)
+  background-color: #0071ff
+  // border: 3px solid #fff
+  color: #fff
+  padding: 1em
+  position: relative
+
+.child
+  +size(100px,100px)
+  background-color: #0f0
+  position: absolute
+  // inset: 10px 20px 30px 40px
+  inset: 0
+  margin: auto
+
+  //原本可能會需要更複雜的設定(如下)來實現絕對居中，現在只需要兩行代碼就可以實現。
+  // top: 50%
+  // left: 50%
+  // transform: translate(-50%,-50%)
