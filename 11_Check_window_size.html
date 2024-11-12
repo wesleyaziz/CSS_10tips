@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/11.css">
+    <title>11_Check_window_size</title>
+</head>
+<body>
+    <!-- 說明:
+            1. 使用@property來定義變數
+            2. 在:root裡面重新定義變數 w , h
+            3. 使用三角函數來取得視窗大小
+                - atan2(y,x) 函數:
+                    - 用於計算點 (x,y) 與 x 軸的夾角
+                    - 回傳值範圍是 -π 到 π 弧度
+                    - 這裡用 vw/vh 作為 y, 1px 作為 x
+                
+                - tan(θ) 函數:
+                    - 計算三角形對邊/鄰邊的比值
+                    - tan(atan2(y,x)) 會得到 y/x 的比值
+                    - 這樣就能將 vw/vh 轉換為像素值
+                
+                所以 tan(atan2(var(--vw),1px)) 實際上就是計算:
+                --w = 視窗寬度(像素)
+                --h = 視窗高度(像素)
+            4. 使用counter-reset來設定變數:
+                - 定義CSS計數器的名稱和初始值
+                - 語法: counter-reset: 計數器名稱 初始值
+                - 例如: counter-reset: w var(--w) h var(--h)
+                  - w和h是計數器名稱
+                  - var(--w)和var(--h)是初始值
+                  - 這樣就能將視窗大小的數值存入計數器中
+            5. 使用counter來顯示變數
+    -->
+</body>
+</html>
